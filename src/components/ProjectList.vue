@@ -15,7 +15,7 @@
     <div class="row justify-content-md-center">
       <div class="col col-lg-2"></div>
       <div class="col-md-auto">
-        <h1>Github Username</h1>
+        <h1>My Username {{this.$router.param}}</h1>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">@</span>
@@ -81,6 +81,7 @@ export default {
   },
   mounted () {
     // this.searchUser()
+    console.log(this.$route.params.user)
   },
   methods: {
     async searchUser () {

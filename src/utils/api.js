@@ -8,3 +8,9 @@ export const __apiGet = (URL, param) => axios({
   }
 
 })
+
+export const __apiGetCustomHeader = (URL) => axios({
+  url: URL,
+  method: 'get',
+  headers: { Accept: 'application/vnd.github.inertia-preview+json' }
+})
