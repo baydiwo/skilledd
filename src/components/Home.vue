@@ -1,15 +1,3 @@
-<style>
-.avatar img{
-    width: 50px;
-}
-.float-right {
-  float:right
-}
-.float-left {
-  float:left
-}
-</style>
-
 <template>
   <div class="container">
     <div class="row justify-content-md-center">
@@ -23,8 +11,8 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Username"
-            aria-label="Username"
+            placeholder="baydiwo"
+            aria-label="baydiwo"
             aria-describedby="basic-addon1"
             v-model="searchQuery"
             v-on:keyup.enter="searchUser"
@@ -71,7 +59,7 @@
 import { SEARCH_USER } from '../api/github'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data () {
     return {
       searchQuery: '',
@@ -84,11 +72,9 @@ export default {
   },
   methods: {
     async searchUser () {
-      console.log('test')
       try {
         this.loading = true
         const response = await SEARCH_USER(this.searchQuery)
-        console.log(response.data.items)
         this.userData = response.data.items
         this.loading = false
       } catch (error) {
@@ -100,7 +86,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less">
 h1,
 h2 {
   font-weight: normal;
@@ -115,5 +101,17 @@ li {
 }
 a {
   color: #42b983;
+}
+.avatar img{
+    width: 50px;
+}
+.float-right {
+  float:right
+}
+.float-left {
+  float:left
+}
+.media-body h3 {
+  line-height: 46px
 }
 </style>
