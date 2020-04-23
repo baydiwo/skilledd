@@ -9,7 +9,7 @@
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "start:prod": "webpack-dev-server --config build/webpack.prod.conf.js --content-base dist/"
+    "start:prod": "npm install && webpack-dev-server --config build/webpack.prod.conf.js --content-base dist/"
   },
   "dependencies": {
     "axios": "^0.19.2",
